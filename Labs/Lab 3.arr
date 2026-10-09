@@ -21,7 +21,7 @@ fun choose-your-weapon(w :: String):
 end
 
 
-choose-your-weapon("Paper")
+choose-your-weapon("Rock")
 
 
 "VS"
@@ -30,15 +30,21 @@ choose-your-weapon("Paper")
 random-weapon = num-random(3)
 
 if random-weapon == 0:
+  var x = "Rock"
   "Rock"
 else if random-weapon == 1:
+  var x = "Paper"
   "Paper"
 else if random-weapon == 2:
+  var x = "Scissors"
   "Scissors"
 else:
   "Oopsie"
 end
 
+when (choose-your-weapon == "Rock") and (random-weapon == 2):
+  print("You win")
+end
 
 
 
