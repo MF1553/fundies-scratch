@@ -21,7 +21,7 @@ flights = load-table:
   hour :: Number,
   minute :: Number, 
   time_hour :: String
-  source: csv-table-url("flights.csv", default-options)
+  source: csv-table-file("flights.csv", default-options)
   sanitize rownames using num-sanitizer
   sanitize dep_time using num-sanitizer
   sanitize sched_dep_time using num-sanitizer
