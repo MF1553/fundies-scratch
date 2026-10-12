@@ -49,6 +49,15 @@ long_flights.row-n(0)["carrier"] + "|" + long_flights.row-n(0)["origin"] + "|" +
 
 
 
+fun is_delayed_departure(row :: Row) -> Boolean:
+  row["dep_delay"] >= 30
+end
+
+fun is_morning_sched_dep(row :: Row) -> Boolean:
+  row["sched_dep_time"] < 1200
+end
+
+
 
 
 
