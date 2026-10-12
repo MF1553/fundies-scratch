@@ -37,12 +37,15 @@ flights = load-table:
 end
 
 
-flights
+fun is_long_flight(row :: Row) -> Boolean:
+  row["distance"] >= 1500
+end
+
+long_flights = order-by(filter-with(flights, is_long_flight), "air_time", false)
+long_flights
 
 
-
-
-
+long_flights.row-n(0)["carrier"] + "|" + long_flights.row-n(0)["origin"] + "|" + long_flights.row-n(0)["dest"]
 
 
 
